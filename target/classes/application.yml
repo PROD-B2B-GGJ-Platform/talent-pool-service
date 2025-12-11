@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: talent-pool-service
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/talent_recruitment}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+
+server:
+  port: ${PORT:8094}
+
