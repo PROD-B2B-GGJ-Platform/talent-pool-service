@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: talent-pool-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: talent-pool-service
+  template:
+    metadata:
+      labels:
+        app: talent-pool-service
+    spec:
+      containers:
+      - name: talent-pool-service
+        image: gograbjob/talent-pool-service:10.0.0.1
+        ports:
+        - containerPort: 8500
